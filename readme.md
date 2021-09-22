@@ -191,19 +191,19 @@ Etapa 9 - Utilização da Classe Pilha
 
 
 ## Aula 3 - PILHAS [FIFO: First In, First Out]
-═════════════════════════════════════════════════════════════
+
 https://github.com/jrdutra/estruturaDeDadosJavaDio/tree/main/apresentacoes/Aula3
 
 Fila - O primeiro que chega é o primeiro a ser atendido
 
 Nó é o conteinner e o conteúdo é meu objeto e porta é número do próximo nó
-
-╔══════════════════╗						   ╔══════════════════╗
-║					   ╔══════╗   ║							 ║                      ╔══════╗   ║
-║	Object()	   ║ Ref. Nó  ║	 ║  ═ Ref. Nó ═►    ║	Object()        ║ Ref. Nó  ║   ║ ═══► null
-║					   ╚══════╝   ║							 ║                      ╚══════╝   ║
-╚══════════════════╝						   ╚══════════════════╝	
-
+```
+╔══════════════════╗             ╔══════════════════╗
+║Object() ╔══════╗ ║             ║Object() ╔══════╗ ║
+║         ║Ref.Nó║ ║ ═ Ref.Nó ═► ║         ║Ref.Nó║ ║ ═══► null
+║         ╚══════╝ ║             ║         ╚══════╝ ║
+╚══════════════════╝             ╚══════════════════╝	
+```
 Métodos:
 .enqueue() - inseri no final da fila e o nó fim de fila aponta para ele
 .dequeue() - remove o primeiro da fila e o anterior aponta passa apontar para null 
