@@ -522,25 +522,3 @@ public class Condicionais {
 }
 ```
 
-
-
-
-
-
-
-
-andrelugomes/
-
-https://github.com/cassianobrexbit/dio-live-polly-09092021
-
-AGILE21
-
-linkedin.com/in/pryscilla-moraes
-neurotech.jobs.recrut.ai
-
-linkedin.com/in/ammanda-cavalcanti
-linkedin.com/in/pryscilla-moraes
-https://www.linkedin.com/in/emidia/
-
-bit.ly/vpneuro
-linkedin.com/in/pryscilla-moraes
