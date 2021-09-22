@@ -192,7 +192,7 @@ Etapa 9 - Utilização da Classe Pilha
 
 ## Aula 3 - PILHAS [FIFO: First In, First Out]
 
-https://github.com/jrdutra/estruturaDeDadosJavaDio/tree/main/apresentacoes/Aula3
+
 
 Fila - O primeiro que chega é o primeiro a ser atendido
 
@@ -212,17 +212,16 @@ Métodos:
 
 
 ## Aula 4 - Listas Encadeadas
-═════════════════════════════════════════════════════════════
-https://github.com/jrdutra/estruturaDeDadosJavaDio/tree/main/apresentacoes/Aula4
-possibilita a adição do nó em diversas posições na fila
 
-Métodos: 
+Possibilita a adição do nó em diversas posições na fila
+
+##### Métodos: 
 add() - possibilita a adição do nó em diversas posições na fila
 remove() - remove o nó e a Ref.nó anterior passa a apontar para o posterior ao nó removido
 .isEmpty()
 .get() - pega a referência do nó desejado sem causar exclusão.
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 ## Classe
 Por convenção as classes em java começam com letra Maiúscula e se for composto como exemplo -  AquilesRodrigues cada palavra inicia em letra maiúscula.
@@ -255,32 +254,35 @@ Já com objeto é diferente, copiamos o valor da referência em memória e passa
 
 #### Primitivos : 
 
-byte ( 8bits, vlr_mín: -128, vlr_máx:127, default: 0);
-short ( 16bits, vlr_mín: -32768, vlr_máx:32767, default:0);
-int ( 32 bits, vlr_mín: -2147483648, vlr_máx:2147483647, default:0);
-long(64 bits, vlr_mín: -9223372036854775808L, vlr_máx:9223372036854775808L, default: 0L, L:Long);
-float(32 bits, vlr_mín: -0.5f, default: 0.0f, f: float);
-double(formato:10.2456, default: 0.0d );
-char ( 16bits, vlr_mín: 1 Caracter, default: '\u0000')
-boolean(true, false, default: false)
+**byte** ( 8bits, vlr_mín: -128, vlr_máx:127, default: 0);
+**short** ( 16bits, vlr_mín: -32768, vlr_máx:32767, default:0);
+**int** ( 32 bits, vlr_mín: -2147483648, vlr_máx:2147483647, default:0);
+**long** (64 bits, vlr_mín: -9223372036854775808L, vlr_máx:9223372036854775808L, default: 0L, L:Long);
+**float** (32 bits, vlr_mín: -0.5f, default: 0.0f, f: float);
+**double** (formato:10.2456, default: 0.0d );
+**char** ( 16bits, vlr_mín: 1 Caracter, default: '\u0000')
+**boolean** (true, false, default: false)
 
-Wrappers(não são primitivos)
-Objetos primitivos Auto-boxing ══> [package java.lang] : Obs.: Estas classes podemos receber atribuição null e possuem métodos utilitários:
- Byte; Short; Integer; Long; Float; Double; Boolean
+##### Wrappers(não são primitivos)
+**Objetos primitivos Auto-boxing** ══> [package java.lang] 
+Obs.: Estas classes podem receber atribuição null e possuem métodos utilitários:
+*Byte; Short; Integer; Long; Float; Double; Boolean*
+
 Exemplo:
+
 Boolean confirma = Boolean.valueOf("true");
 
-Objetos não-primitivos Unboxing ══> Atribuição de um tipo objeto para um tipo primitivo.
+**Objetos não-primitivos Unboxing** ══> Atribuição de um tipo objeto para um tipo primitivo.
+
 Exemplo:   int i = new Integer(3);
 
 
 #### Não Primitivos
 
-String - Sequência de caractares
-Void - Objeto vazio
-Number -  extende number
-Object - objete
-Qualquer outros objetos
+**String** -- Sequência de caractares;
+**Void** -- Objeto vazio;
+**Number** --  extende number;
+**Object** -- objeto (Qualquer outros objetos);
 
 #### Tipagem forte e estátitca
 
@@ -322,14 +324,13 @@ Exemplo:
 ```
 Já que não podemos instanciar uma classe abstrata, podemos estendê-la e seremos obrigados a sobrescrever(@Override) os métodos que não possuem assinatura.
 Depois de estendê-la o que posso fazer?
-
-
-**final**  FormaGeometrica   formaGeo  = new Quadrado("quadrado"); 
-
+```
+final  FormaGeometrica   formaGeo  = new Quadrado("quadrado"); 
+```
 Mas, eu Não posso fazer:
-
+```
 final  FormaGeometrica   formaGeo  = new FormaGeometrica();
-
+```
 
 
 **Static** - O modificador é usado para criação de variáveis que poderá ser acessada por todas as instâncias de objetos desta classe, e quando seu conteúdo é modificado em alguma instância todas serão modificadas.
