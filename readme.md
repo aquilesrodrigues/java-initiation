@@ -17,7 +17,7 @@ Não temos mais a necessidade de baixarmos as dependências do nosso projeto e a
 Gradle é um sistema de automação de compilação de código aberto que se baseia nos conceitos de Apache Ant e Apache Maven e introduz uma linguagem de domínio específico (DSL) baseada em Groovy em vez do XML usado pelo 'Apache Maven' para declarar a configuração do projeto.[2] Gradle usa um grafo acíclico dirigido ("DAG") para determinar a ordem em que as tarefas possam ser executadas.
 
 Downloads:
-	Gradle Build Tool
+	Gradle Build Tool 
 	Apache-mave-3.5.3
 	Intellij IDE
 
@@ -30,19 +30,17 @@ clique no botão Variáveis de Ambiente, no canto inferior direito da janela
 
 ===========================================================================
 ## IDEs : 
-----------------------------------------
 
 
 ### INTELLIJ : 
-==========================================================================
 
 #### Alguns links indicados para estudo:
 Português: http://www.basef.com.br/index.php/Atalhos_do_IntelliJ_Idea (Atalhos do IntelliJ)
 Inglês: https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
 http://index-of.co.uk/Various/IntelliJIDEA_ReferenceCard.pdf
 
-#### Plugins Sugeridos:
-Rainbow Brackets | nyan - Barrinha colorida | GitToolBox  | Key Promoter X | One Dark Theme
+#### Plugins Sugeridos, mas não obrigatórios:
+Rainbow Brackets | nyan - Barrinha colorida | GitToolBox  | Key Promoter X | One Dark Theme | Grazie
 
 ------------------------------------
 #### Teclas de atalhos
