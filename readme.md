@@ -6,15 +6,15 @@
 =============================================================
 
 #### O que é o Maven?
-O Maven é uma ferramenta de código aberto mantida pela Apache. Trata-se de uma ferramenta de gestão de dependências e um task runner. Em outras palavras, o Maven automatiza os processos de obtenção de dependências e de compilação de projetos Java.
+O Maven é uma ferramenta de código aberto mantida pela Apache. Trata-se de uma ferramenta de gerenciamento de dependências e um task runner. Em outras palavras, o Maven automatiza os processos de obtenção de dependências e de compilação de projetos Java.
 
-Quando criamos um projeto Maven, este projeto fica atrelado a um arquivo principal: o pom.xml. Neste arquivo POM (Project Object Model), nós descrevemos as dependências de nosso projeto e a maneira como este deve ser compilado. Com o Maven, é possível, por exemplo, automatizar a execução de testes unitários durante a fase de build, entre outras automatizações.
+Quando criamos um projeto Maven, este projeto fica atrelado a um arquivo principal: o pom.xml. Neste arquivo POM (Project Object Model), nós descrevemos as dependências do nosso projeto e a maneira como este deve ser compilado. Com o Maven, é possível, por exemplo, automatizar a execução de testes unitários durante a fase de build, entre outras automatizações.
 
 ##### Com o Maven:
-Não temos mais a necessidade de baixarmos as dependências de nosso projeto e as configurar dentro do Build Path/Classpath de nossas aplicações. Se nós precisamos do driver do MySQL, por exemplo, simplesmente registramos essa dependência no pom.xml. As ferramentas de automação do Maven irão detectar esta dependência, baixa-la e configura-la no Build Path/Classpath de nosso projeto.
+Não temos mais a necessidade de baixarmos as dependências do nosso projeto e as configurar dentro do Build Path/Classpath das nossas aplicações. Se nós precisarmos do 'driver' do MySQL, por exemplo, simplesmente registramos essa dependência no pom.xml. As ferramentas de automação do Maven irão detectar esta dependência, baixa-la e configura-la no Build Path/Classpath de nosso projeto.
 
 #### O que é o Gradle?
-Gradle é um sistema de automação de compilação de código aberto que se baseia nos conceitos de Apache Ant e Apache Maven e introduz uma linguagem de domínio específico (DSL) baseada em Groovy em vez do XML usado pelo Apache Maven para declarar a configuração do projeto.[2] Gradle usa um grafo acíclico dirigido ("DAG") para determinar a ordem em que as tarefas possam ser executadas.
+Gradle é um sistema de automação de compilação de código aberto que se baseia nos conceitos de Apache Ant e Apache Maven e introduz uma linguagem de domínio específico (DSL) baseada em Groovy em vez do XML usado pelo 'Apache Maven' para declarar a configuração do projeto.[2] Gradle usa um grafo acíclico dirigido ("DAG") para determinar a ordem em que as tarefas possam ser executadas.
 
 Downloads:
 	Gradle Build Tool
@@ -148,22 +148,14 @@ T --> "Type", exemplo: Collections#addAll
 Código de exemplo de refatoração, utilizando uma classe simples e refatorar para uma classe Genérica, utilizando T(type)
 
 
-
-
-## Aula 2 - PILHAS [LIFO: Last In, First Out]
-═════════════════════════════════════════════════════════════
-https://github.com/jrdutra/estruturaDeDadosJavaDio/tree/main/apresentacoes/Aula2
-
-https://web.digitalinnovation.one/course/estrutura-de-dados-em-java/learning/7ec1fd61-497a-412a-b0ff-95ea3aca5f82?back=/browse
+## PILHAS [LIFO: Last In, First Out]
 
 -----------------------------------------------------------------------------------------------------------
-### Etapa 1 - Explicação teórica do conceito de Pilhas
+### Explicação teórica do conceito de Pilhas
 =============================================================
+LIFO ══> O último livro a entrar na pilha será o primeiro a sair.
 
 Uma pilha de Livros é um exemplo, por seguir um comportamento que definimos como:
-
-LIFO ══>
-O último livro a entrar na pilha será o primeiro a sair.
 
 Encadeamento de nó:
 
@@ -175,6 +167,7 @@ Nó é o conteinner ; o conteúdo é meu dado;  porta é número do próximo nó
 ​![](src/image/pilha.jpg)
 
 ####Estrutura de dado pilha:
+
 **Método Top**  - Refência do topo da pilha;
 
 **Método Pop**  - Retira do topo, e a referência do topo passa para o nó de baixo como referência de topo;
@@ -184,13 +177,8 @@ Nó é o conteinner ; o conteúdo é meu dado;  porta é número do próximo nó
 **Método isEmpty** - Verifica a referência de entrada se está nula (pilha vazia)
 
 -----------------------------------------------------------------------------
-Etapa 8 -  Explicação teórica do conceito de Pilhas
 
-Etapa 9 - Utilização da Classe Pilha
-
-
-
-## Aula 3 - PILHAS [FIFO: First In, First Out]
+## FILAS [FIFO: First In, First Out]
 
 
 
@@ -211,7 +199,7 @@ Métodos:
 
 
 
-## Aula 4 - Listas Encadeadas
+## Listas Encadeadas
 
 Possibilita a adição do nó em diversas posições na fila
 
@@ -221,7 +209,6 @@ remove() - remove o nó e a Ref.nó anterior passa a apontar para o posterior ao
 .isEmpty()
 .get() - pega a referência do nó desejado sem causar exclusão.
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 ## Classe
 Por convenção as classes em java começam com letra Maiúscula e se for composto como exemplo -  AquilesRodrigues cada palavra inicia em letra maiúscula.
@@ -395,13 +382,16 @@ Por convenção, por serem objetos constantes e imutáveis(static final), os nom
 ### StringsBuilder
 -----------------------------------------------
 
-StringBuilder  
+**StringBuilder**
+
 .append("texto a ser inserido") ══>  faz inserção de nova string;
 .reverse() ══> retorna a string de traz para frente caracter por caracter;
-.insert(pos, "caracter") ══> inseri caracter na posição informada;
-Exemplo:
-stringnome.insert(0, "A").insert(1, "quiles");
+.insert(pos, "caracter") ══> inserir caracter na posição informada;
 
+Exemplo:
+```
+stringnome.insert(0, "A").insert(1, "quiles");
+```
 
 ### Laços
 -----------------------------------------------
@@ -456,13 +446,13 @@ if (numreo >= 20) {
 ```
 
 #### Lógicos
-**Sort Circuit**  ══> Verifica a primeira condição e caso satisfaça, verificará a segunda 
-&& ══> e  
-||  ══>  ou 
+**Sort Circuit** ══> Verifica a primeira condição e caso satisfaça, verificará a segunda 
+&& ══> e
+|| ══> ou 
 
-**Non Sort Circuit**  ══> Verifica as duas condições independente se a a primeira é satisfatório 
+**Non Sort Circuit** ══> Verifica às duas condições independentes. Se a primeira é satisfatório 
 & ══> e
-|  ══>  ou 
+| ══> ou 
 
 ```java
 public class Condicionais {
@@ -492,7 +482,7 @@ public class Condicionais {
         if (verifica(numero) || verifica(letra)) {
             System.out.println("Opa!!! Validou! foi a 1ª ou a  2ª ?\n Vamos verificar!");
             if (verifica(numero)) {
-                System.out.println("A 1ª condição é verdadeira, então a segunda que é String não foi testadaª\n");
+                System.out.println("A 1ª condição é verdadeira, então a segunda que é String não foi testada \n");
             } else {
                 System.out.println("A primeira condição não é verdadeira, por isso a segunda foi testada e é verdadeira!\n");
             }
@@ -503,7 +493,7 @@ public class Condicionais {
         if (verifica(numero) | verifica(letra)) {
             System.out.println("Opa!!! Validou! Como não é Sort Circuit ambas sempre são validadas!\n Vamos verificar!");
             if (verifica(numero)) {
-                System.out.println("A 1ª condição é verdadeira, mesmo assim a segunda que é String foi testadaª\n");
+                System.out.println("A 1ª condição é verdadeira, mesmo assim a segunda que é String foi testada\n");
             } else {
                 System.out.println("A primeira condição não é verdadeira, mas, ele sempre irá verificar as duas e a 2ª é verdadeira!\n");
             }

@@ -22,6 +22,7 @@ public class Logicos {
         /*
          * Lógico OU
          */
+
         System.out.println("\n************************************************************************************");
         System.out.println("\n* Sort Circuit ══> if (numero ||  letra) ══> Se número ou Letra for verdadeiro\n═══════════════════════════════════════════");
         if (verifica(numero) || verifica(letra)) {
