@@ -25,7 +25,7 @@ pmd {
     ruleSetFiles = files("config/pmd/ruleset.xml")
     toolVersion = '6.39.0'
     ignoreFailures = true
-    consoleoutput = true
+    //consoleoutput = true
 }
 
 test {
