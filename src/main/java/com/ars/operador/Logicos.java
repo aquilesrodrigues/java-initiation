@@ -7,13 +7,13 @@ public class Logicos {
         System.out.println("Valores atribuídas as variáveis:");
         System.out.println("Número = "+numero+"%s e letra = "+letra);
 
-        System.out.println("\n* Sort Circuit ══> if (numero &&  letra) ══> Se número e Letra forem verdadeiros\n═══════════════════════════════════════════");
+        System.out.println("\n* Sort Circuit ==> if (numero &&  letra) ==> Se número e Letra forem verdadeiros\n--------------------------------------------");
         if (verifica(numero) && verifica(letra)) {
             System.out.println("As duas condições foram testadas e ambas são verdadeiras\n");
         } else {
             System.out.println("A primeira condição não é verdadeira, então a segunda não foi testada!\n");
         }
-        System.out.println("\n* Non Sort Circuit ══> if (numero &  letra) ══> Se número e Letra forem verdadeiros\n═══════════════════════════════════════════");
+        System.out.println("\n* Non Sort Circuit ==> if (numero &  letra) ==> Se número e Letra forem verdadeiros\n--------------------------------------------");
         if (verifica(numero) & verifica(letra)) {
             System.out.println("As duas condições foram testadas e ambas são verdadeiras");
         } else {
@@ -24,7 +24,7 @@ public class Logicos {
          */
 
         System.out.println("\n************************************************************************************");
-        System.out.println("\n* Sort Circuit ══> if (numero ||  letra) ══> Se número ou Letra for verdadeiro\n═══════════════════════════════════════════");
+        System.out.println("\n* Sort Circuit ==> if (numero ||  letra) ==> Se número ou Letra for verdadeiro\n--------------------------------------------");
         if (verifica(numero) || verifica(letra)) {
             System.out.println("Opa!!! Validou! foi a 1ª ou a  2ª ?\n Vamos verificar!");
             if (verifica(numero)) {
@@ -35,7 +35,7 @@ public class Logicos {
         } else {
             System.out.println("As duas condições não são verdadeiras. Com o uso do operador lógico '||' Se  o 1º método é falso, o 2º também será verificado!\n");
         }
-        System.out.println("\n* Non Sort Circuit ══> if (numero |  letra) ══> Se número ou Letra for verdadeiro \n═══════════════════════════════════════════");
+        System.out.println("\n* Non Sort Circuit ==> if (numero |  letra) ==> Se número ou Letra for verdadeiro \n--------------------------------------------");
         if (verifica(numero) | verifica(letra)) {
             System.out.println("Opa!!! Validou! Como não é Sort Circuit ambas sempre são validadas!\n Vamos verificar!");
             if (verifica(numero)) {

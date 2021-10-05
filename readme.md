@@ -311,6 +311,7 @@ Exemplo:
 ```
 Já que não podemos instanciar uma classe abstrata, podemos estendê-la e seremos obrigados a sobrescrever(@Override) os métodos que não possuem assinatura.
 Depois de estendê-la o que posso fazer?
+
 ```
 final  FormaGeometrica   formaGeo  = new Quadrado("quadrado"); 
 ```
@@ -422,19 +423,19 @@ else ══> Caso a **nova** condição **if** seja falso esta chamada **else** 
   e executa conteúdo em seu corpo***
 ***}***  
 
-```
-// **************************************************
-// if | else 
-// **************************************************
+``` java
+/* **************************************************
+ if | else 
+ ************************************************** */
 final var letra = "B";
 if ("A".equals(letra)) {
 	System.out.println("Condição verdadeira, se A = B");
 } else {
 	System.out.println("Se não. Condição do else");
 }
-// **************************************************
-// if | else if | else
-// **************************************************
+/* **************************************************
+  if | else if | else
+ ************************************************** */
 final var numero = 6;
 if (numreo >= 20) {
 	System.out.println("O número é maior ou igual a 20");
@@ -455,20 +456,23 @@ Matemáticos | Relacionais | Lógicos | Incremental | Igualdade
 
 
 #### Matemáticos
-```java
+``` java
+public class Matematica {
+    public static void main(String[] args){
+  	System.out.println(0 + 1);
+  	System.out.println(1 - 1);
+  	System.out.println(2 * 1);
+  	System.out.println(3 / 1 );
+  	System.out.println(4 % 2); 	// Resto da divisão
 
-System.out.println(0 + 1);
-System.out.println(1 - 1);
-System.out.println(2 * 1);
-System.out.println(3 / 1 );
-System.out.println(4 % 2); 	// Resto da divisão
+	var numero = 2;  // como não defini a variável como final, posso alterar seu valor
 
-var numero = 2;  // como não defini a variável como final, posso alterar seu valor
+	numero += 3; // Resulta em  5. Isso pq estou pedindo para numero somar seu valor + 3.
+	numero -= 3; // Resulta em  2. Isso pq estou pedindo para numero subtrair seu valor - 3.
+	numero *= 2; // Resulta em  4. Isso pq estou pedindo para numero multiplicar seu valor * 2.
+  }
+}  	
 
-numero += 3; // Resulta em  5. Isso pq estou pedindo para numero somar seu valor + 3.
-numero -= 3; // Resulta em  2. Isso pq estou pedindo para numero subtrair seu valor - 3.
-numero *= 2; // Resulta em  4. Isso pq estou pedindo para numero multiplicar seu valor * 2.
-*/
 ```
 
 #### Relacionais
@@ -559,9 +563,13 @@ public class Condicionais {
 **Incremento  ++**  Dependendo de onde será utilizado e sua disposição poderá apresentar resultados diferentes:
 
 ```java
-var numero = 1;
-System.out.println(++numero);
-System.out.println(numero++);
+public class Incremental {
+	public static void main(String[] args) {
+		var numero = 1;
+		System.out.println(++numero);
+		System.out.println(numero++);
+	}
+}
 ```
 
 **++**numero ══> primeiro executo a ação de incremento para depois imprimir novo valor da variável.
@@ -570,9 +578,13 @@ numero**++** ══> imprimo valor da variável, depois executo a ação de incr
 **decremento  --**  Dependendo de onde será utilizado e sua disposição poderá apresentar resultados diferentes:
 
 ```java
-var numero = 1;
-System.out.println(--numero);
-System.out.println(numero--);
+public class Decremental {
+	public static void main(String[] args) {
+		var numero = 1;
+		System.out.println(--numero);
+		System.out.println(numero--);
+	}
+}
 ```
 
 **--**numero ══> primeiro executo a ação de decremento para depois imprimir novo valor da variável.
@@ -593,6 +605,29 @@ Ex: NomeComposto
 Ex: nomeComposto
 
 **Variáveis** - nomes que identificação intuitiva, evitar numerar variável, evitar usar caracter especial, não começar com letras maiúscula.
+
+### Java.util.Date
+
+-----------------------------------------------
+
+Pacote java.util.Date 
+
+**Date()** ══> Construtor que aloca um objeto da classe date e inicializa com milissegundos mais próximo do momento de sua execução.
+
+```java
+import java.util.Date;
+public class DataHoje {
+  public static void main(String[] args) {
+    Date atualData = new Date();
+    System.out.println(atualData);
+  }
+}
+```
+
+Resultado:
+Tue Oct 05 10:50:22 BRT 2021
+
+
 
 ### Estilos de código 
 
@@ -624,7 +659,8 @@ Através da análise dos elementos, fenômenos observados e imaginados iremos fo
 
 Vamos construir um modelo abstrato na forma de diagrama de entidade-relacionamento. Veja que sem muita explicação já podemos entender qual fenômeno estamos imaginando. Nesta fase não temos nenhuma preocupação com qual tipo de SGBD que no futuro iremos utilizar ou qual arquitetura de dados.
 
-![](D:\projetos\repository\bootcamp\dio\java\initiation\Next_database-Conceitual_1-0-16329257694801.png)
+![](D:\projetos\repository\bootcamp\dio\java\initiation\src\image\Next_database-Conceitual_1-0-16329257694801.png)
+
 
 
 
