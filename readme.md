@@ -28,7 +28,9 @@ Na janela que se abre, acesse a opção Configurações Avançadas do Windows
 clique no botão Variáveis de Ambiente, no canto inferior direito da janela
 
 
+
 ===========================================================================
+
 ## IDEs : 
 
 
@@ -40,7 +42,7 @@ Inglês: https://resources.jetbrains.com/storage/products/intellij-idea/docs/Int
 http://index-of.co.uk/Various/IntelliJIDEA_ReferenceCard.pdf
 
 #### Plugins Sugeridos, mas não obrigatórios:
-Rainbow Brackets | nyan - Barrinha colorida | GitToolBox  | Key Promoter X | One Dark Theme | Grazie
+Rainbow Brackets | nyan - Barrinha colorida | GitToolBox  | Key Promoter X | One Dark Theme | Grazie | Checstyle Plugin
 
 ------------------------------------
 #### Teclas de atalhos
@@ -162,7 +164,7 @@ Espaço em memória que armazena o dado propriamente dito e uma referência para
 Nó é o conteinner ; o conteúdo é meu dado;  porta é número do próximo nó.
 
 
-​![](src/image/pilha.jpg)
+![](src/image/pilha.jpg)
 
 ####Estrutura de dado pilha:
 
@@ -403,12 +405,45 @@ IF e IF Ternário
 
 Palavra reservada que verifica condições
 
+**if( )**  ══> se (condição incluída dentro dos parênteses for verdade )
+**{ }**    ══> O que estiver dentro das chaves após validação será executada
+
+**else if** ══> Caso o **if** seja falso esta chamada irá fazer **nova condição** e executar bloco que estiver a baixo
+**{ }**    ══> O que estiver dentro das chaves após validação será executada
+
+else ══> Caso a **nova** condição **if** seja falso esta chamada **else** irá executar bloco que estiver a baixo
+**{ }**    ══> O que estiver dentro das chaves após validação será executada
+
+══ ══ ══ ══ ══ ══ ══
+**if (condição) {**
+	***corpo do código caso condição verdadeira***
+**} else {**
+	***corpo caso o if não seja verdadeiro o else entra como senão
+  e executa conteúdo em seu corpo***
+***}***  
+
 ```
+// **************************************************
+// if | else 
+// **************************************************
 final var letra = "B";
 if ("A".equals(letra)) {
 	System.out.println("Condição verdadeira, se A = B");
 } else {
 	System.out.println("Se não. Condição do else");
+}
+// **************************************************
+// if | else if | else
+// **************************************************
+final var numero = 6;
+if (numreo >= 20) {
+	System.out.println("O número é maior ou igual a 20");
+}  else if (numero >= 10) {
+	System.out.println(" O número é maior ou igual a 10 e menor que 20");
+} else if (numero  <= 5) {
+	System.out.println(" O número é menor ou igual a 5");
+} else {
+	System.out.println(" O número é maior que 5  e menor 10");
 }
 
 ```
@@ -416,20 +451,28 @@ if ("A".equals(letra)) {
 
 ### Operadores
 -----------------------------------------------
-Igualdade | Lógicos | Incremental | Matemáticos | Relacionais
+Matemáticos | Relacionais | Lógicos | Incremental | Igualdade 
 
 
 #### Matemáticos
-```
-System.out.println(0  + 1);
-System.out.println(1  - 1);
-System.out.println(2  * 1);
-System.out.println(3  / 1 );
+```java
+
+System.out.println(0 + 1);
+System.out.println(1 - 1);
+System.out.println(2 * 1);
+System.out.println(3 / 1 );
 System.out.println(4 % 2); 	// Resto da divisão
 
+var numero = 2;  // como não defini a variável como final, posso alterar seu valor
+
+numero += 3; // Resulta em  5. Isso pq estou pedindo para numero somar seu valor + 3.
+numero -= 3; // Resulta em  2. Isso pq estou pedindo para numero subtrair seu valor - 3.
+numero *= 2; // Resulta em  4. Isso pq estou pedindo para numero multiplicar seu valor * 2.
+*/
 ```
 
 #### Relacionais
+
 ```
 final var numero = 6;
 if (numreo >= 20) {
@@ -510,4 +553,81 @@ public class Condicionais {
     }
 }
 ```
+
+#### Incremental
+
+**Incremento  ++**  Dependendo de onde será utilizado e sua disposição poderá apresentar resultados diferentes:
+
+```java
+var numero = 1;
+System.out.println(++numero);
+System.out.println(numero++);
+```
+
+**++**numero ══> primeiro executo a ação de incremento para depois imprimir novo valor da variável.
+numero**++** ══> imprimo valor da variável, depois executo a ação de incremento.
+
+**decremento  --**  Dependendo de onde será utilizado e sua disposição poderá apresentar resultados diferentes:
+
+```java
+var numero = 1;
+System.out.println(--numero);
+System.out.println(numero--);
+```
+
+**--**numero ══> primeiro executo a ação de decremento para depois imprimir novo valor da variável.
+numero**--** ══> imprimo valor da variável, depois executo a ação de decremento.
+
+
+
+### Convenções de Nomes
+
+-----------------------------------------------
+
+Classes | Métodos | Variáveis 
+
+**Casses** com nomes composto cada nome começa em maiúsculo:
+Ex: NomeComposto
+
+**Métodos** com nomes em minúsculas, caso composto inicia minúscula e próxima palavra inicia Maiúscula:
+Ex: nomeComposto
+
+**Variáveis** - nomes que identificação intuitiva, evitar numerar variável, evitar usar caracter especial, não começar com letras maiúscula.
+
+### Estilos de código 
+
+-----------------------------------------------
+
+Checkstyle Gradle Plugin - Verifica pequenas características de escrita de código (sun cod Conventions, google Java Style)
+https://docs.gradle.org/current/userguide/checkstyle_plugin.html
+https://checkstyle.sourceforge.io/index.html
+Baixar o arquivo:
+https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
+Renomear para checkstyle.xml
+Gravar na pasta criada
+
+PMD Gradle Plugin - faz análise profunda de boas práticas de escrita de código 
+https://pmd.github.io/
+https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.39.0/pmd-bin-6.39.0.zip
+
+
+
+### Modelo de Dados
+
+-----------------------------------------------
+
+Técnica usada para especificação das regras de negócios, visando construir um modelo de dados consistente. 
+
+Através da análise dos elementos, fenômenos observados e imaginados iremos formar um modelo abstrato, que descreve como os dados deverão ser agrupados e relacionados em um banco. O **DER** (***Diagrama Entidades  Relacionamento***) é a representação gráfica deste levantamento.
+
+**Modelo Conceitual** 
+
+Vamos construir um modelo abstrato na forma de diagrama de entidade-relacionamento. Veja que sem muita explicação já podemos entender qual fenômeno estamos imaginando. Nesta fase não temos nenhuma preocupação com qual tipo de SGBD que no futuro iremos utilizar ou qual arquitetura de dados.
+
+![](D:\projetos\repository\bootcamp\dio\java\initiation\Next_database-Conceitual_1-0-16329257694801.png)
+
+
+
+Plugin para conexão de banco:
+https://dev.mysql.com/downloads/connector/j/
 
