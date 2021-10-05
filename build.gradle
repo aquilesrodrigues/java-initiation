@@ -12,8 +12,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 checkstyle {
     toolVersion = '9.0'
@@ -25,9 +25,8 @@ pmd {
     ruleSetFiles = files("config/pmd/ruleset.xml")
     toolVersion = '6.39.0'
     ignoreFailures = true
-    //consoleoutput = true
-}
 
+}
 test {
     useJUnitPlatform()
 }
