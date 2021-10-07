@@ -610,8 +610,7 @@ Ex: nomeComposto
 
 -----------------------------------------------
 
-Pacote java.util.Date 
-
+#### Construtores
 **Date()** ══> Construtor que aloca um objeto da classe date e inicializa com milissegundos mais próximo do momento de sua execução.
 
 ```java
@@ -623,9 +622,111 @@ public class DataHoje {
   }
 }
 ```
-
 Resultado:
 Tue Oct 05 10:50:22 BRT 2021
+
+**Date(long date)**
+Construtor recebe argumento no pdrão tempo(epoch) que usa referência ***1 de janeiro de 1970 00:00:00***
+
+** O epoch timestamp** é aceito largamente pra representar uma data como um inteiro 32bits a partir do início do Unix Epoch.
+
+**System.currentTimeMillis()** ══> método estático da classe System que retorna o milissegundo mais próximo de sua execução com base no S O.
+
+import java.util.Date;
+
+public class DataHoje {
+    public static void main(String[] args) {
+
+        Long tempoAtualSegundos = System.currentTimeMillis();
+        System.out.println(tempoAtualSegundos);
+        Date novaData = new Date(tempoAtualSegundos);
+        System.out.println(novaData);
+    }
+}
+
+Resultado:
+1633445507461
+Tue Oct 05 11:51:47 BRT 2021
+
+#### Métodos úteis da classe Date
+
+![](src/image/java-util-date1.jpg)
+
+
+
+### Java.util.Calendar
+
+-----------------------------------------------
+
+Para facilitar alguns recursos vindos da classe Date.
+
+Classe abstrata que provê métodos para converter data entre um instante especifico;
+
+```java
+import java.util.Calendar;
+
+public class Calendario {
+
+    public static void main(String[] args) {
+
+        Calendar dataAtual = Calendar.getInstance();
+        System.out.println("A data atual é:: "+ dataAtual.getTime());
+
+        dataAtual.add(Calendar.DATE, -15);
+        System.out.println("A 15 dias atrás era: " + dataAtual.getTime());
+
+        dataAtual.add(Calendar.MONTH,  4);
+        System.out.println("Daqui a 4 meses será: " + dataAtual.getTime());
+
+        dataAtual.add(Calendar.YEAR,  2);
+        System.out.println("Daqui a 2 anos será: " + dataAtual.getTime());
+    }
+}
+
+```
+
+
+
+### java.text.DateFormat e java.text.SimpleDateFormat
+
+-----------------------------------------------
+
+**java.text.DateFormat** ══> Classes para formatação de data por extenso.
+**java.text.SimpleDateFormat** ══> Classes para formatação de data simplificada.
+
+```java
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+public class FormatarData {
+	public static void main(String[] args){
+		Date atual = new Date();
+
+		// DateFormat:
+		// Padrão de data por extenso
+		String dataTexto = DateFormat.getDateInstance().format(atual);
+		//
+		System.out.println(dataTexto);
+
+		// Extenso LONGO e CURTO:
+
+		//Variável recebe string de data formatada com parâmetros para melhorar a escrita da data
+		dataTexto = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(atual);
+		System.out.println(dataTexto);
+
+
+		//SimpleDateFormat:
+
+		SimpleDateFormat dataFormatoSimples = new SimpleDateFormat("dd/MM/yyyy");
+
+		//Recebe string de data formatada com padrão dia, mês e ano completo
+		String dataFormatada = dataFormatoSimples.format(atual);
+		System.out.println(dataFormatada);
+	}
+}
+
+```
 
 
 
@@ -659,8 +760,7 @@ Através da análise dos elementos, fenômenos observados e imaginados iremos fo
 
 Vamos construir um modelo abstrato na forma de diagrama de entidade-relacionamento. Veja que sem muita explicação já podemos entender qual fenômeno estamos imaginando. Nesta fase não temos nenhuma preocupação com qual tipo de SGBD que no futuro iremos utilizar ou qual arquitetura de dados.
 
-![](D:\projetos\repository\bootcamp\dio\java\initiation\src\image\Next_database-Conceitual_1-0-16329257694801.png)
-
+![](src/image/Next_database-Conceitual_1-0-16329257694801.png)
 
 
 
