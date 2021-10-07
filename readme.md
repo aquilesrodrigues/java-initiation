@@ -728,7 +728,7 @@ public class FormatarData {
 
 ```
 
-### Java.time.LocalDate
+### Java.time
 
 -----------------------------------------------
 
@@ -745,6 +745,35 @@ public class DataTempo {
     }
 }
 ```
+
+
+
+**LocalTime** ══> Classe do pacote ***java.time*** imutável no padrão de hora
+
+```java
+import java.time.LocalTime;
+
+public class DataTempo {
+    public static void main(String[] args){
+        // LocalTime é uma classe imutável no padrão de hora:minuto:nanosegundos
+        // 13:02:19.113123800
+        LocalTime horaHoje = LocalTime.now();
+        System.out.println(horaHoje);
+
+        // Método que adiciona horas
+        // 14:02:19.113123800
+        LocalTime horaHojeMaisH = horaHoje.plusHours(1);
+        System.out.println(horaHojeMaisH);
+
+        // Método que subtrai horas
+        // 11:02:19.113123800
+        LocalTime horaHojeMenosH = horaHoje.minusHours(2);
+        System.out.println(horaHojeMenosH);
+    }
+}
+```
+
+
 
 
 
