@@ -816,7 +816,6 @@ São todos os erros que ocorrem durante o fluxo de execução.
 
 Ao utilizar instruções que exigem o tratamento de exceção
 
-
 **try / catch**
 
 ```javascript
@@ -854,6 +853,60 @@ try {
 		System.out.println(“Erro inesperado”);
 	} 
 ```
+
+Existe exceções que precisam ser verificadas. Um exemplo é tentarmos ler um arquivo que não sabemos se realmente ele está no disco
+
+```
+FileReader texto;
+//...
+try { 
+		texto = new FileReader(“C:\\aulas\\aula1.txt”);
+} catch (FileNotFoundException e) {
+		System.out.println(“Arquivo não foi encontrado”); 
+}
+```
+
+
+---
+
+![Exceções Verificadas](src/image/exception_verificadas_java.jpg)
+
+**Cláusula Finally**
+
+Quando usamos o ***try/catch***  e queremos garantir a execução de instruções mesmo quando não ocorra uma exceção devemos implementar a cláusula ***finally***.
+
+```
+try {
+		Conexao cn = openConexao();
+		Escola escola = cn.getDados();
+		cn.gravarNoArquivo(escola);
+	} catch (SQLException sqle) {
+		System.out.println(“Erro ao acessar banco de dados”);
+	} catch (IOException ioe) {
+		System.out.println(“Erro ao gravar no arquivo”);
+	} catch (Exception e) {
+		System.out.println(“Erro inesperado”);
+	} finally {
+		fecharConexao(cn);
+	}
+```
+
+Throws: É a assinatura do método que será retornado caso ocorra erro para o método que fez a chamada, dentro de um fluxo encadeado.
+
+Throw: É usado para lançar a exceção desejada, juntamente com a mensagem de erro, para o método que fez a chamada.
+
+Se tivermos que usar tratamento de exceptios, temos duas opções:
+***try /catch*** ou transferir a exceção para quem chamou o método atual pela cláusula ***throws***.
+
+```
+void openArquivo() throws FileNotFountException {
+	FileReader texto;
+	// ...
+	texto = new FileReader(“C:\\aulas\\aula1.txt”);
+}
+```
+
+
 
 
 
