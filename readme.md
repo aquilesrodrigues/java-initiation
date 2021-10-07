@@ -746,8 +746,6 @@ public class DataTempo {
 }
 ```
 
-
-
 **LocalTime** ══> Classe do pacote ***java.time*** imutável no padrão de hora
 
 ```java
@@ -772,6 +770,75 @@ public class DataTempo {
     }
 }
 ```
+
+**LocalDateTime** ══> Classe do pacote ***java.time*** imutável que trabalha com dia, hora ao mesmo tempo
+
+
+```java
+import java.time.LocalDateTime;
+
+public class DataTempo {
+    public static void main(String[] args){
+
+        // LocalDateTime - Classe do pacote ***java.time*** imutável que trabalha com dia, hora
+        // 2021-10-07T13:43:22.923866
+        LocalDateTime agora = LocalDateTime.now();
+        System.out.println(agora);
+
+        // 2021-10-09T14:43:34.923866
+        LocalDateTime futuro = agora.plusHours(1).plusDays(2).plusSeconds(12);
+        System.out.println(futuro);
+
+    }
+}
+```
+
+
+
+
+
+### Exceções em JAVA 
+
+-----------------------------------------------
+
+São todos os erros que ocorrem durante o fluxo de execução.
+
+**Implícitas**: são exceções que não precisam de tratamento e são contornáveis. São das classes Error ou RunTimeException.
+
+***Error*** = Classificada como exceção que não pode ser tratada pela aplicação;
+***RuntimeException*** = Resgata as exceções lançadas pela máquina virtual (JVM).
+
+**Explícitas**: Exceções que precisam ser tratadas e que apresentam condições incontornáveis. Esse tem origem do modelo throw(subclasse Exception ou IOException) e necessita ser declarada pelos métodos. 
+
+***Exception*** = Trata todas as exceções da aplicação que podem ser tratadas e capturadas. (Seu evento retorna uma I/O Exception ou resultado de uma divisão por zero).
+
+![](src/image/exception_java.jpg)
+
+Ao utilizar instruções que exigem o tratamento de exceção
+
+
+**try / catch**
+
+```javascript
+try { 
+	// Instruções sujeitas  a falhas 
+} catch (Exception e) { 
+	// Instruções a serem executadas  em caso de falhas 
+}
+```
+
+***Exemplo***:
+
+```javascript
+try { 
+	Conexao cn = abrirConexao();
+	cn.gravarRegistro(aluno1); 
+} catch (Exception e) {
+	System.out.println(“Erro ao gravar”); 
+	System.out.println(e.getMessage()); 
+}
+```
+
 
 
 
