@@ -728,6 +728,24 @@ public class FormatarData {
 
 ```
 
+### Java.time.LocalDate
+
+-----------------------------------------------
+
+LocalDate ══> Classe do pacote ***java.time*** imutável que representa uma Data, seu formato padrão é americano yyyy-MM-dd.
+
+```java
+import java.time.LocalDate;
+
+public class DataTempo {
+    public static void main(String[] args){
+        LocalDate dataHoje = LocalDate.now();
+        //formato americano yyyy-MM-dd
+        System.out.println(dataHoje);
+    }
+}
+```
+
 
 
 ### Estilos de código 
