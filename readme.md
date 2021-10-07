@@ -832,11 +832,27 @@ try {
 ```javascript
 try { 
 	Conexao cn = abrirConexao();
-	cn.gravarRegistro(aluno1); 
+	cn.gravarRegistro(pessoa); 
 } catch (Exception e) {
-	System.out.println(“Erro ao gravar”); 
+	System.out.println(“Erro na gravação”); 
 	System.out.println(e.getMessage()); 
 }
+```
+
+
+
+```java
+try {
+		Conexao cn = openConexao();
+		Escola escola = cn.getDados();
+		cn.gravarNoArquivo(escola);
+	} catch (SQLException sqle) {
+		System.out.println(“Erro ao acessar banco de dados”);
+	} catch (IOException ioe) {
+		System.out.println(“Erro ao gravar no arquivo”);
+	} catch (Exception e) {
+		System.out.println(“Erro inesperado”);
+	} 
 ```
 
 
