@@ -203,11 +203,29 @@ Métodos:
 
 Possibilita a adição do nó em diversas posições na fila
 
+​                          ╔════════════════╗                         ╔═════════════╗
+╔═════╗         ║Object()  ╔══════╗     ║                         ║Object() ╔═════╗  ║
+║Ref.Nó  ║ ═► ║               ║Ref.Nó    ║     ║ ═ Ref.Nó ═►  ║              ║Ref.Nó  ║  ║ ═══► null
+╚═════╝         ║               ╚══════╝     ║                         ║              ╚═════╝  ║
+​                           ╚════════════════╝                         ╚═════════════╝	
+
+
+
+
 ##### Métodos: 
-add() - possibilita a adição do nó em diversas posições na fila
-remove() - remove o nó e a Ref.nó anterior passa a apontar para o posterior ao nó removido
-.isEmpty()
-.get() - pega a referência do nó desejado sem causar exclusão.
+**add()** - possibilita a adição do nó em diversas posições na fila.
+Exemplo:
+Se quisermos adicionar um nó entre o 2 e o 3. Pegar a referência do 2 nó aponto para o novo nó e a referência do novo nó aponto para o 3 nó.
+
+**remove()** - remove o nó e a Ref.nó anterior passa a apontar para o posterior ao nó removido.
+Exemplo:
+Se removermos o 2 nó,  o primeiro nó passa a apontar para o nó posterior ao 2 nó que foi removido
+
+**get()** - pega a referência do nó desejado sem causar exclusão.
+
+**isEmpty()** - verifica se lista está vazia
+
+
 
 
 ## Classe
@@ -224,13 +242,13 @@ O método principal para executar um programa em java é:
 **String[ ] args**: assinatura do método (argumentos)
 **{ }**: corpo do método
 
-As classes possuem construtor que recebe  o mesmo nome da classe e fala como a classe irá ser construída.
+:vertical_traffic_light: Uma classe possue construtor que recebe  o mesmo nome da classe e fala como a classe irá ser construída.
 
 
 
 ### TIPOS de dados
 ------------------------------------------
-Os tipos primitivos são aqueles que não são objetos.
+
 
 O valor da variável "A" será copiado para a outra variável.
 As atribuições em JAVA são por cópia de valor sempre;
@@ -238,19 +256,25 @@ Com tipo primitivo, copiamos o valor em memória;
 
 Já com objeto é diferente, copiamos o valor da referência em memória e passamos para o outro objeto a ser duplicado.
 
-
 #### Primitivos : 
 
-**byte** ( 8bits, vlr_mín: -128, vlr_máx:127, default: 0);
-**short** ( 16bits, vlr_mín: -32768, vlr_máx:32767, default:0);
-**int** ( 32 bits, vlr_mín: -2147483648, vlr_máx:2147483647, default:0);
-**long** (64 bits, vlr_mín: -9223372036854775808L, vlr_máx:9223372036854775808L, default: 0L, L:Long);
-**float** (32 bits, vlr_mín: -0.5f, default: 0.0f, f: float);
-**double** (formato:10.2456, default: 0.0d );
-**char** ( 16bits, vlr_mín: 1 Caracter, default: '\u0000')
-**boolean** (true, false, default: false)
+Os tipos primitivos são aqueles que não são objetos.
 
-##### Wrappers(não são primitivos)
+|             |                                                              |
+| ----------- | ------------------------------------------------------------ |
+| **byte**    | 8bits, vlr_mín: -128, vlr_máx:127, default: 0                |
+| **short**   | 16bits, vlr_mín: -32768, vlr_máx:32767, default:0            |
+| **int**     | 32 bits, vlr_mín: -2147483648, vlr_máx:2147483647, default:0 |
+| **long**    | 64 bits, vlr_mín: -9223372036854775808L, vlr_máx:9223372036854775808L, default: 0L, L:Long |
+| **float**   | 32 bits, vlr_mín: -0.5f, default: 0.0f, f: float             |
+| **double**  | formato:10.2456, default: 0.0d                               |
+| **char**    | 16bits, vlr_mín: 1 Caracter, default: '\u0000'               |
+| **boolean** | true, false, default: false                                  |
+
+ 
+
+Wrappers(não são primitivos)
+
 **Objetos primitivos Auto-boxing** ══> [package java.lang] 
 Obs.: Estas classes podem receber atribuição null e possuem métodos utilitários:
 *Byte; Short; Integer; Long; Float; Double; Boolean*
@@ -270,6 +294,8 @@ Exemplo:   int i = new Integer(3);
 **Void** -- Objeto vazio;
 **Number** --  extende number;
 **Object** -- objeto (Qualquer outros objetos);
+
+
 
 #### Tipagem forte e estátitca
 
@@ -840,7 +866,7 @@ try {
 
 
 
-```java
+```
 try {
 		Conexao cn = openConexao();
 		Escola escola = cn.getDados();
