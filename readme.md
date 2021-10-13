@@ -406,10 +406,11 @@ Por convenção, por serem objetos constantes e imutáveis(static final), os nom
 	.format("texto a ser exibido,  %s",  variável)  ══> utilizamos %s para informar onde será inserido valor da variável;
 	.format(" Número:   %.2f   ") ══> informando que é float e com duas casas decimais após a vírgula;
 
-### StringsBuilder
------------------------------------------------
 
-**StringBuilder**
+
+### StringsBuilder
+
+-----------------------------------------------
 
 .append("texto a ser inserido") ══>  faz inserção de nova string;
 .reverse() ══> retorna a string de traz para frente caracter por caracter;
@@ -598,10 +599,10 @@ public class Incremental {
 }
 ```
 
-**++**numero ══> primeiro executo a ação de incremento para depois imprimir novo valor da variável.
-numero**++** ══> imprimo valor da variável, depois executo a ação de incremento.
+**++**numero ══> primeiro executa a ação de incremento para depois imprimir novo valor da variável.
+numero**++** ══> imprime valor da variável, depois executo a ação de incremento.
 
-**decremento  --**  Dependendo de onde será utilizado e sua disposição poderá apresentar resultados diferentes:
+**decremento--**  Dependendo de onde será utilizado e sua disposição poderá apresentar resultados diferentes:
 
 ```java
 public class Decremental {
@@ -866,27 +867,29 @@ try {
 
 
 
-```
+```javascript
 try {
-		Conexao cn = openConexao();
-		Escola escola = cn.getDados();
-		cn.gravarNoArquivo(escola);
-	} catch (SQLException sqle) {
-		System.out.println(“Erro ao acessar banco de dados”);
-	} catch (IOException ioe) {
-		System.out.println(“Erro ao gravar no arquivo”);
-	} catch (Exception e) {
-		System.out.println(“Erro inesperado”);
-	} 
+	Conexao cn = openConexao();
+	Escola escola = cn.getDados();
+	cn.gravarNoArquivo(escola);
+} catch (SQLException sqle) {
+	System.out.println(“Erro ao acessar banco de dados”);
+} catch (IOException ioe) {
+	System.out.println(“Erro ao gravar no arquivo”);
+} catch (Exception e) {
+	System.out.println(“Erro inesperado”);
+} 
 ```
 
-Existe exceções que precisam ser verificadas. Um exemplo é tentarmos ler um arquivo que não sabemos se realmente ele está no disco
 
-```
+
+Existe exceções que precisam ser verificadas. Um exemplo é se tentarmos ler um arquivo que não sabemos se realmente ele está no disco
+
+```javascript
 FileReader texto;
 //...
 try { 
-		texto = new FileReader(“C:\\aulas\\aula1.txt”);
+  texto = new FileReader(“C:\\aulas\\aula1.txt”);
 } catch (FileNotFoundException e) {
 		System.out.println(“Arquivo não foi encontrado”); 
 }
