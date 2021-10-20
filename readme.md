@@ -164,15 +164,24 @@ Ctrl + Shift + O ==> Import objeto
 -----------------------------------------------------------------------------------------------------------
 ### Generics em Java
 
-
 Contexto:
 - Evitar casting excessivo;
 - Evitar códigos redundantes;
 - Encontrar erros em tempo de compilação
 - O recurso foi introduzido desde o Java SE 5.0
 
-Generics podem ser aplicadas em classes, métodos e atributos, além de interfaces e enums.
 Generics nada mais é que um mecanismo para verificar se o que você está desenvolvendo está nos trilhos corretos.
+Generics podem ser aplicadas em *classes*, **métodos** e *atributos*, além de *interfaces e enums*.
+Generics *não podem ser aplicadas sobre tipos primitivos (int, long, char, boolean)*
+Mesmo com a existência das **classes *Wrappers (Integer, Long, Character, Boolean)* e o *auto-boxing (conversão automática entre tipo primitivo e wrapper – int e Integer, por exemplo)* não é possível utilizar tipos primitivos** com Generics.
+
+Em métodos com Generics, é necessário declarar os tipos dos parâmetros na assinatura do método, entre os modificadores e o tipo do retorno, por exemplo:
+~~~
+		public static <T> T igual(T origem){
+    	return origem;
+	}
+~~~
+Esse parâmetro T deverá ser criado na declaração da classe, pois senão ocorrerá erro de compilação.
 
 #### CORINGAS
 ---------
@@ -180,16 +189,28 @@ Generics nada mais é que um mecanismo para verificar se o que você está desen
 Unknown Wildcards -> recebe uma lista genérica e exibir em um for 
 
 
-(Bounded -):
+(Bounded -): Generics aceitar herança, basta utilizar a palavra chave extends e a classe pai
 UpperBounded Wildcard -> Coringas Ilimitados por cima(herdeiros) 
 LowerBounded Wildcard -> Coringa limitado por baixo (não aceita herdeiros)
 
-Convenção de caracteres:
-K --> "key", exemplo: Map <**K**, V>
-V --> "Value", exemplo: Map <K, **V**>
-E --> "Element", exemplo: List<**E**>
-T --> "Type", exemplo: Collections#addAll
-**?** quando genérico
+Convenção de caracteres em Generics:
+
+| Notação                              | Tipo                                        | Exemplo                                                      |                                                              |
+| ------------------------------------ | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| K                                    | "key"                                       | Map <**K**, V>                                               |                                                              |
+| V                                    | "Value"                                     | Map <K, **V**>                                               |                                                              |
+| Set                                  |                                             |                                                              | Raw Type, ou seja, uma *classe* desprovida de notações generics |
+| <E>                                  | "Element"                                   | List<**E**>                                                  | Utilizado para denotar um Elemento. Tipo Genérico; É chamado de um parâmetro formal; Utilizado para denotar um Elemento |
+| <E extends class1> extends class2<E> | ClassC<E extends ClassA> extends ClassB <E> | public abstract class ClassC<E extends ClassA> extends ClassB<E> | Declara uma *classe* que recebe um tipo parametrizado E, o qual estende a *classe* ClassA. Além disso a *classe* classC estende a *classe* ClassB a qual é obrigada a receber instâncias de E. |
+| <Integer>                            |                                             |                                                              | Tipo Parametrizado como uma *classe* Integer                 |
+| <?>                                  |                                             |                                                              | Representa uma *classe* desconhecida                         |
+| <? extends T>                        |                                             |                                                              | Representa o tipo parametrizado como uma *classe* que seja da instância de T ou filha de T |
+| <? Super T>                          |                                             |                                                              | Representa o tipo parametrizado T que seja uma instância de T ou pai de T, seja *classe* ou interface |
+| <T>                                  | "Type"                                      | Collections#addAll                                           | O tipo parametrizado T implemente a interface Comparable ou um de seus pais |
+| <T extends Comparable<T>>            | Parametrizado Recursivo                     | <T extends Comparable<T>>                                    | deve ser do tipo de uma *classe* que realize uma implementação da interface Comparable para comparações com a *classe* T. |
+|                                      |                                             |                                                              |                                                              |
+
+ 
 
 ### Refatoração da Classe No
 
