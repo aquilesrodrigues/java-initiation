@@ -46,7 +46,7 @@ Com isso, pode-se concluir que a abstração é a maneira de interpretar um cont
 - [x] 1. Maven
 - [x] 2. Gradle
 
-=============================================================
+=================================================================
 
 #### O que é o Maven?
 O Maven é uma ferramenta de código aberto mantida pela Apache. Trata-se de uma ferramenta de gerenciamento de dependências e um task runner. Em outras palavras, o Maven automatiza os processos de obtenção de dependências e de compilação de projetos Java.
@@ -78,10 +78,10 @@ Vá ao painel de controle e procure as Configurações Avançadas do Windows, ab
 
 Depois na variável path insira o caminho do ***gradle\bin*** e salve a variável.
 
-===========================================================================
+
 
 ## IDEs : 
-
+-----------------------------------------------------------------------------------------------------------
 
 ### INTELLIJ : 
 
@@ -156,11 +156,12 @@ Alt + Shift + X ==> Executar como Aplicação Java
 Ctrl + 3 ==> Abre menu atalho para busca (Commands{Generate, git, debugs} | 
 Menus | Preferences | help)
 
-
 Ctrl + Shift + O ==> Import objeto
 
 
-## Características da linguagem
+
+
+## Características da linguagem Java
 -----------------------------------------------------------------------------------------------------------
 ### Generics em Java
 
@@ -193,7 +194,7 @@ Unknown Wildcards -> recebe uma lista genérica e exibir em um for
 UpperBounded Wildcard -> Coringas Ilimitados por cima(herdeiros) 
 LowerBounded Wildcard -> Coringa limitado por baixo (não aceita herdeiros)
 
-Convenção de caracteres em Generics:
+#### Convenção de caracteres em Generics:
 
 | Notação                              | Tipo                                        | Exemplo                                                      |                                                              |
 | ------------------------------------ | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -216,13 +217,14 @@ Convenção de caracteres em Generics:
 
 Código de exemplo de refatoração, utilizando uma classe simples e refatorar para uma classe Genérica, utilizando **T(type)**
 
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 
-## PILHAS [LIFO: Last In, First Out]
+### PILHAS [LIFO: Last In, First Out]
 
 -----------------------------------------------------------------------------------------------------------
-### Explicação teórica do conceito de Pilhas
-=============================================================
+
 **LIFO** ══> O último livro a entrar na pilha será o primeiro a sair.
 
 Uma pilha de Livros é um exemplo, por seguir um comportamento que definimos como:
@@ -247,9 +249,13 @@ O **conteúdo** é *meu dado*;
 
 **Método isEmpty** - Verifica a referência de entrada se está nula (pilha vazia)
 
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 
-## FILAS [FIFO: First In, First Out]
+### FILAS [FIFO: First In, First Out]
+
+------------------------------------------------------------------------------------------------------------------------------
 
 Fila - O primeiro que chega é o primeiro a ser atendido
 
@@ -271,7 +277,7 @@ O **conteúdo** é *meu dado*;
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-## Listas Encadeadas
+### Listas Encadeadas
 
 Possibilita a adição do nó em diversas posições na fila
 
@@ -298,13 +304,10 @@ Exemplo:
 **isEmpty()** - verifica se lista está vazia
 
 
+------------------------------------------------------------------------------------------------------------------------------
 
+### Classe
 
-
-
-
-
-## Classe
 Por convenção as classes em java começam com letra Maiúscula e se for composto como exemplo -  AquilesRodrigues cada palavra inicia em letra maiúscula.
 
 O método principal para executar um programa em java é:
@@ -322,8 +325,9 @@ O método principal para executar um programa em java é:
 
 
 
-### TIPOS de dados
-------------------------------------------
+#### TIPOS de dados
+
+------------------------------------------------------------------------------------------------------------------------------
 
 
 O valor da variável "A" será copiado para a outra variável.
@@ -332,7 +336,7 @@ Com tipo primitivo, copiamos o valor em memória;
 
 Já com objeto é diferente, copiamos o valor da referência em memória e passamos para o outro objeto a ser duplicado.
 
-#### Primitivos : 
+*Primitivos* : 
 
 Os tipos primitivos são aqueles que não são objetos.
 
@@ -349,7 +353,7 @@ Os tipos primitivos são aqueles que não são objetos.
 
  
 
-Wrappers(não são primitivos)
+*Wrappers*(não são primitivos)
 
 **Objetos primitivos Auto-boxing** ══> [package java.lang] 
 Obs.: Estas classes podem receber atribuição null e possuem métodos utilitários:
@@ -364,7 +368,7 @@ Boolean confirma = Boolean.valueOf("true");
 Exemplo:   int i = new Integer(3);
 
 
-#### Não Primitivos
+**Não Primitivos**
 
 **String** -- Sequência de caractares;
 **Void** -- Objeto vazio;
@@ -375,24 +379,27 @@ Exemplo:   int i = new Integer(3);
 
 #### Tipagem forte e estátitca
 
+------------------------------------------------------------------------------------------------------------------------------
+
 Tipagem Estática - os tipos da variável são verificados em tempo de compilação
 Tipagem forte -  uma vez atribuído o tipo da variável ele não poderá ser modificado
 Tipo Inferido -  Usando a palavra reservada **var** antes da atribuição da variável ele verifica o valor atribuído e declara a variável de acordo com o seu tipo.
 
 
 
-### Modificador de acesso
+#### Modificador de acesso
+
+------------------------------------------------------------------------------------------------------------------------------
 
 **Public** - acessado de qualquer lugar, por qualquer entidade no projeto
 **Private** -(atributos e métodos de classe) tudo só pode ser visto pela sua classe
 **Protected** - acessível às classes do mesmo pacote ou através de Herança e seus métodos herdados não são acessíveis a outras classes fora do pacote em que foram declarados
 default(padrão) - Acessíveis somente por classes do mesmo pacote, sua declaração não é definida um tipo de modificador, por isso o compilador resolve. 
 
-----------------------------------------------------------
-
 **Abstract** - (Ela não existe, ela cria uma ideia de algo) 
 	Esse modificador não é aplicado nas variáveis, apenas em (CLASSES E MÉTODOS).
 	Uma classe ABSTRATA não pode ser instanciada.
+
 	Obs: Se houver alguma declaração de um método como abstract, a classe também deve ser marcada como abstract.
 
 Exemplo:
@@ -402,7 +409,8 @@ Exemplo:
 		public abstract String nome(); // ══> este método não tem corpo
 	}
 ```
-    --------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+
 ```java
 	public class Quadrado extends FormaGeometrica {
 			@Override // ═══> sobrescrita(@Override) do método existente na classe FormaGeometirica
@@ -411,7 +419,9 @@ Exemplo:
 			}
 	}
 ```
+
 Já que não podemos instanciar uma classe abstrata, podemos estendê-la e seremos obrigados a sobrescrever(@Override) os métodos que não possuem assinatura.
+
 Depois de estendê-la o que posso fazer?
 
 ```
