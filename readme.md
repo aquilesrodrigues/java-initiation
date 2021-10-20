@@ -1,8 +1,51 @@
 # Desenvolvimento básico em java
 
+
+O fato de você utilizar na sua aplicação a orientação a objeto não quer dizer que não é não é uma aplicação estruturada.
+
+Simula 67 - primeira linguagem orientada a objetos 
+
+Como identificar uma função utilitária?
+
+Deve ser feita a seguintes perguntas:
+
+Ela consegue se resolver por ela mesma, sem depdendências externas?
+
+Os parãmetros de entrada são simples e diretos?
+
+o resultado de saída também é simples e direto?
+
+Exemplo:
+Validação de CPF ou CNPJ (Entrada: o cpf | Saída: Verdadeiro ou Falso).
+
+
+Os conceitos são muito importantes!
+
+**Classe e Objeto** -
+
+Diferença entre Classes e Objetos: Antes de um objeto ser criado, devemos definir quais serão suas propriedades e métodos, tais definições são realizadas através de uma classe.
+A partir de uma classe, podemos construir objetos na memória do computador que executa a nossa aplicação. Usando uma analogia, uma classe funciona como uma "receita" para criar objetos. Inclusive, vários objetos podem ser criados a partir de uma única classe.
+
+São estruturas de dados atraves dos quais objetos podem ser instanciados
+
+**Associação de Classes** - Quando utilizamos uma classe dentro de outra classe.
+
+**Herança** - É a utilização de uma classe base, fazendo com que uma nova classe tenha todos os atributos e funções da classe pai, mais as suas próprias.
+
+**Encapsulamento** - É a possibilidade de proteger alguns dados ou funcionalidades da classe, não permitindo que seus consumidores possam acessá-la.
+
+**Polimorfismo** - Capacidade de referenciar objetos construídos por classes específicas como objetos de uma classe genérica, desde que essa classe genérica respeite a hierarquia em questão. Aqui podemos criar funções que terão o mesmo nome, mas que podem ter diferentes processamentos, implementações ou mesma classe o mesmo nome e diferentes entradas.
+
+**Abstração** - é a habilidade de concentrar-se nos aspectos essenciais de um domínio, ignorando características menos importantes ou acidentais. Nesse contexto, objetos são abstrações de entidades existentes no domíno em questão.
+Com isso, pode-se concluir que a abstração é a maneira de interpretar um contexto de negócio quando desejamos transcrevê-lo como uma aplicação OO.
+
+----------------------------------
+
 ## Ambiente
 -----------------------------------------------------------------------------------------------------------
-### Maven e Gradle
+- [x] 1. Maven
+- [x] 2. Gradle
+
 =============================================================
 
 #### O que é o Maven?
@@ -11,23 +54,29 @@ O Maven é uma ferramenta de código aberto mantida pela Apache. Trata-se de uma
 Quando criamos um projeto Maven, este projeto fica atrelado a um arquivo principal: o pom.xml. Neste arquivo POM (Project Object Model), nós descrevemos as dependências do nosso projeto e a maneira como este deve ser compilado. Com o Maven, é possível, por exemplo, automatizar a execução de testes unitários durante a fase de build, entre outras automatizações.
 
 ##### Com o Maven:
-Não temos mais a necessidade de baixarmos as dependências do nosso projeto e as configurar dentro do Build Path/Classpath das nossas aplicações. Se nós precisarmos do 'driver' do MySQL, por exemplo, simplesmente registramos essa dependência no pom.xml. As ferramentas de automação do Maven irão detectar esta dependência, baixa-la e configura-la no Build Path/Classpath de nosso projeto.
+Não temos mais a necessidade de baixarmos as dependências do nosso projeto e as configurar dentro do Build Path/Classpath das nossas aplicações. Se nós precisarmos do 'driver' do MySQL, por exemplo, simplesmente registramos essa dependência no ***pom.xml***. As ferramentas de automação do Maven irão detectar esta dependência, baixar e configurar no Build Path/Classpath de nosso projeto.
+
+Onde baixar o Maven? https://maven.apache.org/download.cgi
+
+Para que o executável do Maven fique visível na linha de comando do Windows, é necessário configurar a variável MAVEN_HOME e inseri-la no Path do sistema. 
+Então, baixe o Maven e salve em uma pasta de sua escolha. Agora **copie o caminho completo** onde o Maven foi salvo por você.
+Vá ao painel de controle e procure as Configurações Avançadas do Windows, abra e procure o botão ***Variáveis de Ambiente***, no canto inferior direito da janela e crie a variável com o nome MAVEN_HOME e seu caminho o nome da pasta onde você extraiu o Maven.
+
+Depois na variável path insira o caminho do ***maven/bin*** e salve a variável.
 
 #### O que é o Gradle?
 Gradle é um sistema de automação de compilação de código aberto que se baseia nos conceitos de Apache Ant e Apache Maven e introduz uma linguagem de domínio específico (DSL) baseada em Groovy em vez do XML usado pelo 'Apache Maven' para declarar a configuração do projeto.[2] Gradle usa um grafo acíclico dirigido ("DAG") para determinar a ordem em que as tarefas possam ser executadas.
 
-Downloads:
-	Gradle Build Tool 
-	Apache-mave-3.5.3
-	Intellij IDE
-
 O Gradle é um sistema de automação de build (compilação) open source que usa uma linguagem específica de domínio (DSL) em Groovy e Kotlin para definir tarefas. O Gradle foi projetado para automatizar o build de vários projetos. Ele também oferece suporte a builds incrementais, determinando quais partes do projeto já estão atualizadas, para que qualquer tarefa dependente dessas partes não seja executada novamente.
 
-Para que o executável do Gradle fique visível na linha de comando do Windows, é necessário configurar a variável GRADLE_HOME e expô-la no Path do sistema. Copie o caminho completo onde o Gradle foi colocado por você.
-Na janela que se abre, acesse a opção Configurações Avançadas do Windows
-clique no botão Variáveis de Ambiente, no canto inferior direito da janela
+Downloads:
+	Gradle Build Tool - https://gradle.org/releases/ 
 
+Para que o executável do Maven fique visível na linha de comando do Windows, é necessário configurar a variável GRADLE_HOME e inseri-la no Path do sistema. 
+Então, baixe o Maven e salve em uma pasta de sua escolha. Agora **copie o caminho completo** onde o Maven foi salvo por você.
+Vá ao painel de controle e procure as Configurações Avançadas do Windows, abra e procure o botão ***Variáveis de Ambiente***, no canto inferior direito da janela e crie a variável com o nome GRADLE_HOME e seu caminho o nome da pasta onde você extraiu o Gradle.
 
+Depois na variável path insira o caminho do ***gradle\bin*** e salve a variável.
 
 ===========================================================================
 
@@ -36,12 +85,12 @@ clique no botão Variáveis de Ambiente, no canto inferior direito da janela
 
 ### INTELLIJ : 
 
-#### Alguns links indicados para estudo:
+####  :vertical_traffic_light: Alguns links indicados para estudo:
 Português: http://www.basef.com.br/index.php/Atalhos_do_IntelliJ_Idea (Atalhos do IntelliJ)
 Inglês: https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
 http://index-of.co.uk/Various/IntelliJIDEA_ReferenceCard.pdf
 
-#### Plugins Sugeridos, mas não obrigatórios:
+#### :vertical_traffic_light: Plugins Sugeridos, mas não obrigatórios:
 Rainbow Brackets | nyan - Barrinha colorida | GitToolBox  | Key Promoter X | One Dark Theme | Grazie | Checstyle Plugin
 
 ------------------------------------
@@ -113,8 +162,7 @@ Ctrl + Shift + O ==> Import objeto
 
 ## Características da linguagem
 -----------------------------------------------------------------------------------------------------------
-### Etapa 6 - Generics em Java
-=============================================================
+### Generics em Java
 
 
 Contexto:
@@ -122,6 +170,9 @@ Contexto:
 - Evitar códigos redundantes;
 - Encontrar erros em tempo de compilação
 - O recurso foi introduzido desde o Java SE 5.0
+
+Generics podem ser aplicadas em classes, métodos e atributos, além de interfaces e enums.
+Generics nada mais é que um mecanismo para verificar se o que você está desenvolvendo está nos trilhos corretos.
 
 #### CORINGAS
 ---------
@@ -134,39 +185,38 @@ UpperBounded Wildcard -> Coringas Ilimitados por cima(herdeiros)
 LowerBounded Wildcard -> Coringa limitado por baixo (não aceita herdeiros)
 
 Convenção de caracteres:
-K --> "key", exemplo: Map <K, V>
-V --> "Value", exemplo: Map <K, V>
-E --> "Element", exemplo: List<E>
+K --> "key", exemplo: Map <**K**, V>
+V --> "Value", exemplo: Map <K, **V**>
+E --> "Element", exemplo: List<**E**>
 T --> "Type", exemplo: Collections#addAll
-? quando genérico
+**?** quando genérico
 
+### Refatoração da Classe No
 
------------------------------------------------------------------------------------------------------------
-### Etapa 7 - Refatoração da Classe No
-=============================================================
+Código de exemplo de refatoração, utilizando uma classe simples e refatorar para uma classe Genérica, utilizando **T(type)**
 
-Código de exemplo de refatoração, utilizando uma classe simples e refatorar para uma classe Genérica, utilizando T(type)
-
+------------------------------------------------------------------------------------------------------------------------------
 
 ## PILHAS [LIFO: Last In, First Out]
 
 -----------------------------------------------------------------------------------------------------------
 ### Explicação teórica do conceito de Pilhas
 =============================================================
-LIFO ══> O último livro a entrar na pilha será o primeiro a sair.
+**LIFO** ══> O último livro a entrar na pilha será o primeiro a sair.
 
 Uma pilha de Livros é um exemplo, por seguir um comportamento que definimos como:
 
-Encadeamento de nó:
+**Encadeamento de nó** (*Espaço em memória que armazena o dado propriamente dito e uma referência para um próximo nó*).
 
-Espaço em memória que armazena o dado propriamente dito e uma referência para um próximo nó.
-
-Nó é o conteinner ; o conteúdo é meu dado;  porta é número do próximo nó.
+**Nó** é o *conteinner*; 
+O **conteúdo** é *meu dado*;  
+**porta** é *número do próximo nó*.
 
 
 ![](src/image/pilha.jpg)
 
-####Estrutura de dado pilha:
+
+####**Estrutura de dado pilha**
 
 **Método Top**  - Refência do topo da pilha;
 
@@ -176,15 +226,16 @@ Nó é o conteinner ; o conteúdo é meu dado;  porta é número do próximo nó
 
 **Método isEmpty** - Verifica a referência de entrada se está nula (pilha vazia)
 
------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
 
 ## FILAS [FIFO: First In, First Out]
 
-
-
 Fila - O primeiro que chega é o primeiro a ser atendido
 
-Nó é o conteinner e o conteúdo é meu objeto e porta é número do próximo nó
+**Nó** é o *conteinner*; 
+O **conteúdo** é *meu dado*;  
+**porta** é *número do próximo nó*.
+
 ```
 ╔══════════════════╗             ╔══════════════════╗
 ║Object() ╔══════╗ ║             ║Object() ╔══════╗ ║
@@ -192,38 +243,42 @@ Nó é o conteinner e o conteúdo é meu objeto e porta é número do próximo n
 ║         ╚══════╝ ║             ║         ╚══════╝ ║
 ╚══════════════════╝             ╚══════════════════╝	
 ```
-Métodos:
-.enqueue() - inseri no final da fila e o nó fim de fila aponta para ele
-.dequeue() - remove o primeiro da fila e o anterior aponta passa apontar para null 
-.isempty() - verifica se nó é null
+**Métodos**:
+.***enqueue()***  --> inseri no final da fila e o nó fim de fila aponta para ele.
+.***dequeue()*** --> remove o primeiro da fila e o anterior aponta passa apontar para null. 
+.***isempty()***  --> verifica se nó é null.
 
-
+------------------------------------------------------------------------------------------------------------------------------
 
 ## Listas Encadeadas
 
 Possibilita a adição do nó em diversas posições na fila
 
-​                          ╔════════════════╗                         ╔═════════════╗
+​                           ╔════════════════╗                         ╔═════════════╗
 ╔═════╗         ║Object()  ╔══════╗     ║                         ║Object() ╔═════╗  ║
 ║Ref.Nó  ║ ═► ║               ║Ref.Nó    ║     ║ ═ Ref.Nó ═►  ║              ║Ref.Nó  ║  ║ ═══► null
 ╚═════╝         ║               ╚══════╝     ║                         ║              ╚═════╝  ║
-​                           ╚════════════════╝                         ╚═════════════╝	
-
-
+​                          ╚════════════════╝                         ╚═════════════╝	
 
 
 ##### Métodos: 
-**add()** - possibilita a adição do nó em diversas posições na fila.
-Exemplo:
-Se quisermos adicionar um nó entre o 2 e o 3. Pegar a referência do 2 nó aponto para o novo nó e a referência do novo nó aponto para o 3 nó.
+**add()** --> possibilita a adição do nó em diversas posições na fila.
 
-**remove()** - remove o nó e a Ref.nó anterior passa a apontar para o posterior ao nó removido.
 Exemplo:
-Se removermos o 2 nó,  o primeiro nó passa a apontar para o nó posterior ao 2 nó que foi removido
+*Se quisermos adicionar um nó entre o 2 e o 3. Basta, pegar a referência do 2º nó apontar para o novo nó e a referência do novo nó apontar para o 3º nó.*
+
+**remove()** --> remove o nó e a Ref. do nó anterior passa a apontar para o próximo  nó após o nó removido.
+
+Exemplo:
+*Se removermos o 2 nó,  o primeiro nó passa a apontar para o nó posterior ao 2 nó que foi removido*.
 
 **get()** - pega a referência do nó desejado sem causar exclusão.
 
 **isEmpty()** - verifica se lista está vazia
+
+
+
+
 
 
 
@@ -383,9 +438,8 @@ Por convenção, por serem objetos constantes e imutáveis(static final), os nom
 		}
 
 ### Strings - pacote java.lang
------------------------------------------------
 
-	Strings é uma classe que representa uma sequencia de caracteres
+Strings é uma classe que representa uma sequencia de caracteres
 	
 	.charAt(5) ══> retorna a 5 posição do array de caracter:
 	.length()  ══> Retorna o tamanho da string;
@@ -401,8 +455,8 @@ Por convenção, por serem objetos constantes e imutáveis(static final), os nom
 	.concat() ══> ????????????
 	.replaceAll() ══> ??????????
 	.split() ══> 
-	
-	Formatador:
+
+Formatador:
 	.format("texto a ser exibido,  %s",  variável)  ══> utilizamos %s para informar onde será inserido valor da variável;
 	.format(" Número:   %.2f   ") ══> informando que é float e com duas casas decimais após a vírgula;
 
@@ -828,7 +882,7 @@ public class DataTempo {
 
 -----------------------------------------------
 
-São todos os erros que ocorrem durante o fluxo de execução.
+São todos os erros que ocorrem durante o fluxo de execução:point_down:.
 
 **Implícitas**: são exceções que não precisam de tratamento e são contornáveis. São das classes Error ou RunTimeException.
 
@@ -970,12 +1024,12 @@ Através da análise dos elementos, fenômenos observados e imaginados iremos fo
 
 **Modelo Conceitual** 
 
-Vamos construir um modelo abstrato na forma de diagrama de entidade-relacionamento. Veja que sem muita explicação já podemos entender qual fenômeno estamos imaginando. Nesta fase não temos nenhuma preocupação com qual tipo de SGBD que no futuro iremos utilizar ou qual arquitetura de dados.
+Vamos construir um modelo abstrato na forma de diagrama de entidade-relacionamento. Veja que sem muita explicação já podemos entender qual fenômeno estamos imaginando. Nesta fase não temos nenhuma preocupação com qual tipo de SGBD que no futuro iremos utilizar ou qual arquitetura de dados:point_down:.
 
 ![](src/image/Next_database-Conceitual_1-0-16329257694801.png)
 
 
 
-Plugin para conexão de banco:
+:vertical_traffic_light: Plugin para conexão de banco:
 https://dev.mysql.com/downloads/connector/j/
 
