@@ -3,16 +3,14 @@
 
 O fato de você utilizar na sua aplicação a orientação a objeto não quer dizer que não é não é uma aplicação estruturada.
 
-Simula 67 - primeira linguagem orientada a objetos 
+**Simula 67** - primeira linguagem orientada a objetos 
 
-Como identificar uma função utilitária?
+Como identificar uma **função utilitária**?
 
-Deve ser feita a seguintes perguntas:
+Devem ser feitas as seguintes perguntas:
 
 Ela consegue se resolver por ela mesma, sem depdendências externas?
-
 Os parãmetros de entrada são simples e diretos?
-
 o resultado de saída também é simples e direto?
 
 Exemplo:
@@ -24,7 +22,8 @@ Os conceitos são muito importantes!
 **Classe e Objeto** -
 
 Diferença entre Classes e Objetos: Antes de um objeto ser criado, devemos definir quais serão suas propriedades e métodos, tais definições são realizadas através de uma classe.
-A partir de uma classe, podemos construir objetos na memória do computador que executa a nossa aplicação. Usando uma analogia, uma classe funciona como uma "receita" para criar objetos. Inclusive, vários objetos podem ser criados a partir de uma única classe.
+
+A partir de uma **classe**, podemos construir objetos na memória do computador que executa a nossa aplicação. Usando uma analogia, uma classe funciona como uma "receita" para criar objetos. Inclusive, vários objetos podem ser criados a partir de uma única classe.
 
 São estruturas de dados atraves dos quais objetos podem ser instanciados
 
@@ -184,6 +183,8 @@ Em métodos com Generics, é necessário declarar os tipos dos parâmetros na as
 ~~~
 Esse parâmetro T deverá ser criado na declaração da classe, pois senão ocorrerá erro de compilação.
 
+
+
 #### CORINGAS
 ---------
 (Unboundled - Ilimitado):
@@ -304,31 +305,10 @@ Exemplo:
 **isEmpty()** - verifica se lista está vazia
 
 
-------------------------------------------------------------------------------------------------------------------------------
-
-### Classe
-
-Por convenção as classes em java começam com letra Maiúscula e se for composto como exemplo -  AquilesRodrigues cada palavra inicia em letra maiúscula.
-
-O método principal para executar um programa em java é:
-
-**public static void main(String[ ] args) {   }**
-
-**public**: modificador de acesso
-**static**:  tipo de retorno
-**void**: palavra reservada (sem retorno)
-**main**: nome da classe
-**String[ ] args**: assinatura do método (argumentos)
-**{ }**: corpo do método
-
-:vertical_traffic_light: Uma classe possue construtor que recebe  o mesmo nome da classe e fala como a classe irá ser construída.
-
-
 
 #### TIPOS de dados
 
 ------------------------------------------------------------------------------------------------------------------------------
-
 
 O valor da variável "A" será copiado para a outra variável.
 As atribuições em JAVA são por cópia de valor sempre;
@@ -367,7 +347,6 @@ Boolean confirma = Boolean.valueOf("true");
 
 Exemplo:   int i = new Integer(3);
 
-
 **Não Primitivos**
 
 **String** -- Sequência de caractares;
@@ -386,21 +365,46 @@ Tipagem forte -  uma vez atribuído o tipo da variável ele não poderá ser mod
 Tipo Inferido -  Usando a palavra reservada **var** antes da atribuição da variável ele verifica o valor atribuído e declara a variável de acordo com o seu tipo.
 
 
+------------------------------------------------------------------------------------------------------------------------------
+
+### Classe
+
+
+![](src/image/metodo-em-java.jpg)
+
+**public**: Especificador de acesso
+**int**:  tipo de retorno
+**void**: palavra reservada (sem retorno)
+**sum**: nome do método
+**(int a, int b)**: Lista de parâmetro (argumentos) 
+**{ }**: corpo do método
+**sum(int a, int b)** - Assinatura do método - É uma parte da declaração do método que inclui o (**nome do método** e a **lista de parâmetros**).
+
+
+:vertical_traffic_light: Por convenção as classes em java começam com letra Maiúscula e se for composto como exemplo -  "CustoTotal" cada palavra inicia em letra maiúscula.
+:vertical_traffic_light: O método principal para executar um programa em java é: **public static void main(String[ ] args) {   }**
+:vertical_traffic_light: Uma classe possue construtor que recebe  o mesmo nome da classe e fala como a classe irá ser construída.
+
+
 
 #### Modificador de acesso
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-**Public** - acessado de qualquer lugar, por qualquer entidade no projeto
-**Private** -(atributos e métodos de classe) tudo só pode ser visto pela sua classe
-**Protected** - acessível às classes do mesmo pacote ou através de Herança e seus métodos herdados não são acessíveis a outras classes fora do pacote em que foram declarados
-default(padrão) - Acessíveis somente por classes do mesmo pacote, sua declaração não é definida um tipo de modificador, por isso o compilador resolve. 
+Os **modificadores de acesso da linguagem Java** têm o objetivo de tornar as implementações mais adequadas a seu propósitos e são definidos sempre em palavras minúsculas.
+Os modificadores de acesso determinam a acessibilidade e o escopo de vários elementos do nosso código, tais como: propriedades, métodos, construtores e classes. Um exemplo é o uso do especificador **final** pode conferir segurança ao código e maior velocidade de execução. O especificador **static** confere economia de memória e a possibilidade de troca de informações entre os objetos da classe.
 
-**Abstract** - (Ela não existe, ela cria uma ideia de algo) 
-	Esse modificador não é aplicado nas variáveis, apenas em (CLASSES E MÉTODOS).
-	Uma classe ABSTRATA não pode ser instanciada.
+:vertical_traffic_light: É importante ter em mente que o uso de um modificador pode ocorrer em conjunto com outro e, o uso em conjunto de dois **modificadores de acesso** pode gerar características próprias, as quais não eram presentes no uso individual. Exemplo:    **public static void     main( String[] args ) {   }** .
 
-	Obs: Se houver alguma declaração de um método como abstract, a classe também deve ser marcada como abstract.
+| Modificador inicial | Utilizado em:                                                | Aplicável                                                    |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **public**          | **Fora Pacote, Pacote, Classe, método e atributo**           | acessado de qualquer lugar, por qualquer entidade no projeto |
+| **private**         | **atributos** e **Métodos** da classe                        | acesso limitado - só pode ser visto pela sua classe. Só pode ser acessado dentro da classe que foi declarado! |
+| **protected**       | **Fora Pacote**(subclasse), **Pacote, Classe, método e atributo** | Acessíveis somente por classes do mesmo pacote ou subclasses em um pacote diferente, desde que a classe a partir da qual será feito o acesso, seja uma classe filha (relação de herança). |
+| **default(padrão)** | **Pacote, Classe**                                           | o Java usa o especificador de acesso padrão por padrão. É visível apenas do mesmo pacote. |
+| **abstract**        | **Classe e método**                                          | Uma classe ABSTRATA não pode ser instanciada.                |
+
+​	:vertical_traffic_light: Se houver alguma declaração de um método como **abstract**, a classe também deve ser marcada como abstract.
 
 Exemplo:
 ```java
@@ -409,6 +413,10 @@ Exemplo:
 		public abstract String nome(); // ══> este método não tem corpo
 	}
 ```
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 ```java
@@ -432,16 +440,26 @@ Mas, eu Não posso fazer:
 final  FormaGeometrica   formaGeo  = new FormaGeometrica();
 ```
 
-
-**Static** - O modificador é usado para criação de variáveis que poderá ser acessada por todas as instâncias de objetos desta classe, e quando seu conteúdo é modificado em alguma instância todas serão modificadas.
-
 Obs: Não é necessários instanciar um objeto para ter acesso ao método da classe.
 
-**Final** - O modificador de impedimento.
+
+
+**final** - O modificador de impedimento.
 	Dependendo onde for colocado terá ações diferentes:
-		Na Classe ══> não permite estender(extends) a classe;
-		No método ══> não permite ser sobrescrito (@Override);
-		Na Variável ══> não permite que o valor da variável seja alterado após a primeira atribuição.
+		Na Classe ══> só pode ser inicializado uma única vez, ou diretamente na declaração da classe , não permite estender(extends) a classe;
+		No método ══> não permite ser sobrescrito (@Override), só pode ser inicializado uma única vez, ou diretamente na declaração do método construtor.;
+		No atributo ══> Aplicado aos atributos, os mesmos passam a ser constantes, não permite que o valor da variável seja alterado após a primeira atribuição. A definição deve obrigatoriamente ocorrer  na **declaração** ou no **método construtor** e, quando isso ocorre, eles são chamados “**blank FINAL variable**”.
+
+| Atributos                                                 | Tipos              | Restrição                                                    |
+| --------------------------------------------------------- | ------------------ | ------------------------------------------------------------ |
+| **byte, short, int, long, char, float, double e boolean** | PRIMITIVOS         | seus valores constantes                                      |
+| **String, Number, Object**                                | OBJETOS OU VETORES | apenas a referência ao objeto ou ao vetor é fixa. os valores dos atributos do objeto FINAL ou os valores contidos nas posições do vetor FINAL podem ser alterados, mas impede que sejam instanciados novamente |
+
+
+
+**static** - O modificador é usado para criação de variáveis que poderá ser acessada por todas as instâncias de objetos desta classe, e quando seu conteúdo é modificado em alguma instância todas serão modificadas.
+
+Quando um atributo recebe os modificadores de acesso **static** e **final**, sua inicialização apresenta uma alteração distinta, o atributo não poderá mais ser inicializado no método construtor, sendo possível sua inicialização apenas diretamente na declaração do atributo ou no bloco de inicialização estático.
 
 
 ### Interfaces (  @Override)
