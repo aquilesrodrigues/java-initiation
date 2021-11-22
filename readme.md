@@ -281,13 +281,13 @@ O **conteúdo** é *meu dado*;
 ### Listas Encadeadas
 
 Possibilita a adição do nó em diversas posições na fila
-
-​                           ╔════════════════╗                         ╔═════════════╗
-╔═════╗         ║Object()  ╔══════╗     ║                         ║Object() ╔═════╗  ║
-║Ref.Nó  ║ ═► ║               ║Ref.Nó    ║     ║ ═ Ref.Nó ═►  ║              ║Ref.Nó  ║  ║ ═══► null
-╚═════╝         ║               ╚══════╝     ║                         ║              ╚═════╝  ║
-​                          ╚════════════════╝                         ╚═════════════╝	
-
+``
+             ╔═══════════════════╗              ╔═════════════════╗
+╔═══════╗    ║Object() ╔═══════╗ ║              ║Object()╔══════╗ ║
+║Ref.Nó ║ ═► ║         ║Ref.Nó ║ ║ ═ Ref.Nó ═►  ║        ║Ref.Nó║ ║ ═══► null
+╚═══════╝    ║         ╚═══════╝ ║              ║        ╚══════╝ ║
+             ╚═══════════════════╝              ╚═════════════════╝	
+```
 
 ##### Métodos: 
 **add()** --> possibilita a adição do nó em diversas posições na fila.
@@ -1041,8 +1041,25 @@ void openArquivo() throws FileNotFountException {
 
 
 
+### Tags Javadoc
 
+----------------------------------------------------
 
+@author - Especifica o autor da classe ou do método
+@deprecated - Identifica classes ou métodos obsoletos.
+@link - possibilita a definção de um link para um outro documento local ou remoto através de url.
+@param - Descreve um parâmentro que será passado a um método
+@return - descreve qual o tipo de retorno de um método
+@see - Associa a outras classes ou métodos
+@since - Descreve desde quando uma classe ou métodos foi adicionado
+@throws - Descreve os tipos de exceções que podem ser lançadas por um método.
+@version - Descreve a versão da classe ou método
+
+Exemplo:
+/**
+* @author
+* @since Release 1.0.0
+*/
 
 
 ### Estilos de código 
