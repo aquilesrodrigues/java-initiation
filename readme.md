@@ -1,20 +1,20 @@
 # Desenvolvimento básico em java
 
 
-O fato de você utilizar na sua aplicação a orientação a objeto não quer dizer que não é não é uma aplicação estruturada.
+O fato de você utilizar na sua aplicação a orientação a objeto não quer dizer que não é uma aplicação estruturada.
 
 **Simula 67** - primeira linguagem orientada a objetos 
 
 Como identificar uma **função utilitária**?
 
-Devem ser feitas as seguintes perguntas:
+  Devem ser feitas as seguintes perguntas:
 
-Ela consegue se resolver por ela mesma, sem depdendências externas?
-Os parãmetros de entrada são simples e diretos?
-o resultado de saída também é simples e direto?
+  Ela consegue se resolver por ela mesma, sem depdendências externas?
+  Os parãmetros de entrada são simples e diretos?
+  o resultado de saída também é simples e direto?
 
-Exemplo:
-Validação de CPF ou CNPJ (Entrada: o cpf | Saída: Verdadeiro ou Falso).
+    Exemplo:
+      Validação de CPF ou CNPJ (Entrada: o cpf | Saída: Verdadeiro ou Falso).
 
 
 Os conceitos são muito importantes!
